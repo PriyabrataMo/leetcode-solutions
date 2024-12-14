@@ -12,11 +12,12 @@ public:
             int mini = *ms.begin();
             while (l < n && l < r &&
                    (abs(maxi - nums[r]) > 2 || abs(mini - nums[r]) > 2)) {
-                
+
                 auto it = ms.find(nums[l]);
-                
+
                 ms.erase(it);
-                if(ms.size()==0) break;
+                if (ms.size() == 0)
+                    break;
                 maxi = *ms.rbegin();
                 mini = *ms.begin();
                 l++;
@@ -24,7 +25,6 @@ public:
             ms.insert(nums[r]);
             long long sz = ms.size();
             ans += sz;
-            cout<<ans<<endl;
             r++;
         }
         return ans;
