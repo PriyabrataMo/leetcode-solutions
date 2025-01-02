@@ -1,8 +1,6 @@
 class Solution {
 public:
-    bool isvowel(char c){
-        return c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
-    }
+    
     vector<int> vowelStrings(vector<string>& arr, vector<vector<int>>& q) {
         int n = arr.size();
         vector<int> vo(n,0); 
@@ -12,9 +10,7 @@ public:
             bool f1 = c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
             c = arr[i].back();
             bool f2 = c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
-            // if(isvowel(arr[i][0])&&isvowel(arr[i].back())){
-            //     vo[i] = 1;
-            // }
+            
             if(f1&&f2){
                 vo[i] = 1;
             }
