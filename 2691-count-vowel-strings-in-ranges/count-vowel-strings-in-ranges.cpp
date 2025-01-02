@@ -21,13 +21,12 @@ public:
         
         vector<int> ans;
         for(auto it:q){
-            int st = it[0];
-            int en = it[1];
-            if(st>0){
-                ans.push_back(vo[en]-vo[st-1]);
+           
+            if(it[0]>0){
+                ans.push_back(vo[it[1]]-vo[it[0]-1]);
             }
             else{
-                ans.push_back(vo[en]);
+                ans.push_back(vo[it[1]]);
             }
         }
         return ans;
