@@ -15,7 +15,7 @@ public:
         }
         for(auto it:fre){
             if(it.ss>it.ff&&it.ff!=-1){
-                cout<<it.ss<<" "<<it.ff<<endl;
+                //cout<<it.ss<<" "<<it.ff<<endl;
                 ans+= unordered_set(s.begin()+it.ff+1 , s.begin()+it.ss).size();
             }
         }
