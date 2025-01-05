@@ -2,17 +2,18 @@ class Solution {
 public:
     int maximumPopulation(vector<vector<int>>& arr) {
         int c = 0;
-        map<int,int> mpp;
+        vector<int> mpp(110 , 0);
+        
         for(auto it:arr){
-            mpp[it[0]]++;
-            mpp[it[1]]--;
+            mpp[it[0]-1950]++;
+            mpp[it[1]-1950]--;
         }
         int maxp = 0;
         int ans;
-        for(auto it:mpp){
-            c+=it.second;
+        for(int i=0;i<110;i++){
+            c+=mpp[i];
             if(c>maxp){
-                ans = it.first;
+                ans = i+1950;
                 maxp = c;
             }
         }
