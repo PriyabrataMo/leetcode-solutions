@@ -4,10 +4,6 @@ public:
         int n = s.size();
         vector<int> mpp(n + 2, 0);
         for (auto it : arr) {
-            // int shift = 1;
-            // if (it[2] == 0) {
-            //     shift = -1;
-            // }
             mpp[it[0]] += 2*it[2]-1;
             mpp[it[1] + 1] -= 2*it[2]-1;
         }
@@ -16,8 +12,7 @@ public:
         for (int i = 0; i < n; i++) {
             pre = (pre + mpp[i]) % 26;
 
-            char rep = (((s[i] - 'a') + pre + 26) % 26) + 'a';
-            s[i] = rep;
+            s[i] = (((s[i] - 'a') + pre + 26) % 26) + 'a';
         }
         return s;
     }
