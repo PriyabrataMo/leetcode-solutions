@@ -8,18 +8,14 @@ public:
             if(it[2]==0){
                 shift = 25;
             }
-
             mpp[it[0]]+=shift;
             mpp[it[1]+1]-=shift;
         }
-        // for(auto it:mpp){
-        //     cout<<it<<" ";
-        // }
-        // cout<<endl;
+        
         int pre = 0;
         for(int i=0;i<n;i++){
             pre+=mpp[i];
-            char c = s[i];
+            
             char rep = (((s[i]-'a')+pre)%26)+'a';
             s[i] = rep;
         }
