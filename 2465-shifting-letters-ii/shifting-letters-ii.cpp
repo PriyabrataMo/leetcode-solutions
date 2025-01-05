@@ -4,12 +4,12 @@ public:
         int n = s.size();
         vector<int> mpp(n + 2, 0);
         for (auto it : arr) {
-            int shift = 1;
-            if (it[2] == 0) {
-                shift = -1;
-            }
-            mpp[it[0]] += shift;
-            mpp[it[1] + 1] -= shift;
+            // int shift = 1;
+            // if (it[2] == 0) {
+            //     shift = -1;
+            // }
+            mpp[it[0]] += 2*it[2]-1;
+            mpp[it[1] + 1] -= 2*it[2]-1;
         }
 
         int pre = 0;
