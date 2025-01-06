@@ -9,13 +9,11 @@ public:
         int s =0;
         for(int i=1;i<n;i++){
             s+=pre[i-1];
-            cout<<s<<endl;
             if(arr[i]=='1')pre[i] = pre[i-1]+1;
             else pre[i] = pre[i-1];
             ans[i] += s;
             
         }
-        cout<<s<<endl;
         s=0;
         if(arr[n-1]=='1')suf[n-1] = 1;
         for(int i=n-2;i>=0;i--){
@@ -24,13 +22,6 @@ public:
             else suf[i] = suf[i+1];
             ans[i]+=s;
         }
-        // for(auto it:suf){
-        //     cout<<it<<endl;
-        // }
-        // for(int i=0;i<n;i++){
-        //     if(arr[i]=='1')ans[i]= pre[i]+suf[i] - 2;
-        //     else ans[i]= pre[i]+suf[i];
-        // }
         return ans;
     }
 };
