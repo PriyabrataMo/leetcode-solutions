@@ -1,10 +1,9 @@
 class Solution {
 public:
-    bool func(const string& str1, const string& str2) {
+    bool func(string& str1, string& str2) {
         int s1 = str1.size(), s2 = str2.size();
         if (s1 > s2)
             return false;
-        //return str2.substr(0, s1) == str1 && str2.substr(s2 - s1) == str1;
         bool flag = true;
         for(int i=0;i<s1;i++){
             if(str1[i]!=str2[i]) return false;
