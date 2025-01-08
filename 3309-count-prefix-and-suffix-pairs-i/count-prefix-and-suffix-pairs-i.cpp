@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool func(string& str1, string& str2) {
+    bool func(const string& str1, const string& str2) {
         int s1 = str1.size(), s2 = str2.size();
         if (s1 > s2)
             return false;
