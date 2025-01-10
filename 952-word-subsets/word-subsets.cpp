@@ -37,7 +37,7 @@ public:
             // }
             // cout << endl;
             if (func(mp2)) {
-                ans.push_back(it);
+                ans.emplace_back(it);
             }
         }
         return ans;
