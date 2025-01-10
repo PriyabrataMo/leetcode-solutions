@@ -18,7 +18,7 @@ public:
             for (auto &itt : it) {
                 mp[itt]++;
             }
-            for(auto it:mp){
+            for(auto &it:mp){
                 mpp[it.first] = max(mp[it.first] , mpp[it.first]);
             }
         }
