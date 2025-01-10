@@ -2,7 +2,7 @@ class Solution {
 public:
     unordered_map<char, int> mpp;
     bool func(unordered_map<char, int> &mp) {
-        for (auto itt : mpp) {
+        for (auto &itt : mpp) {
 
             if (mp[itt.first] < mpp[itt.first]) {
                 return false;
