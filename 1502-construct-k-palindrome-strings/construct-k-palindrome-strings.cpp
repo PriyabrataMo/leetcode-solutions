@@ -4,7 +4,7 @@ public:
         if (s.length() < k) return false;
 
         vector<int> fre(26,0);
-        for (char c : s) {
+        for (char &c : s) {
             fre[c-'a']++;
         }
 
