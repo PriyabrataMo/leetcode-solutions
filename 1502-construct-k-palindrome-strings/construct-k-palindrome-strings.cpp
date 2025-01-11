@@ -8,11 +8,11 @@ public:
             fre[c-'a']++;
         }
 
-        int oddCount = 0;
-        for (auto& entry : fre) {
-            if (entry % 2 != 0) oddCount++;
+        int ans = 0;
+        for (auto& it : fre) {
+            if (it % 2 != 0) ans++;
         }
 
-        return oddCount <= k;
+        return ans <= k;
     }
 };
