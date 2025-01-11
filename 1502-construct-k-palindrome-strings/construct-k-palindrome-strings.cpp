@@ -3,14 +3,14 @@ public:
     bool canConstruct(string s, int k) {
         if (s.length() < k) return false;
 
-        unordered_map<char, int> charCount;
+        vector<int> fre(26,0);
         for (char c : s) {
-            charCount[c]++;
+            fre[c-'a']++;
         }
 
         int oddCount = 0;
-        for (auto& entry : charCount) {
-            if (entry.second % 2 != 0) oddCount++;
+        for (auto& entry : fre) {
+            if (entry % 2 != 0) oddCount++;
         }
 
         return oddCount <= k;
