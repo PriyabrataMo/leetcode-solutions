@@ -8,13 +8,11 @@ public:
         
         int ans = 0;
         for (auto& it : fre) {
-            cout<<it<<endl;
             if (it % 2)
                 ans += 1;
             else
                 ans += it?2:0;
 
-            cout<<ans<<endl;
         }
         return ans;
     }
