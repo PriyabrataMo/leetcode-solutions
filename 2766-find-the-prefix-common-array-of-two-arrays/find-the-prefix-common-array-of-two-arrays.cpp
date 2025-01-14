@@ -7,15 +7,13 @@ public:
         vector<int> ans(n);
         for(int i=0;i<n;i++){
             fre[a[i]-1]+=1;
-            fre[b[i]-1]+=2;
-            for(auto &it:fre){
-                if(it==3){
-                    c++;
-                    it=-1;
-                }
+            if(fre[a[i]-1]==2)c++;
 
-            }
+            fre[b[i]-1]+=1;
+            if(fre[b[i]-1]==2)c++;
             ans[i] = c;
+            
+            
 
         }
         return ans;
