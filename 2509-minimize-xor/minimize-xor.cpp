@@ -9,7 +9,6 @@ public:
         if(one1==one2) return num1;
         bitset<32> ans;
         for(int i=31;i>=0;i--){
-            cout<<i<<endl;
             if(n1[i]==1&&one2>0){
                 
                 one2--;
