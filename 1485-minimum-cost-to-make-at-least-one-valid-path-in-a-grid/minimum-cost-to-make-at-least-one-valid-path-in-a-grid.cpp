@@ -1,10 +1,9 @@
 class Solution {
 public:
-    int n , m;
     
     int minCost(vector<vector<int>>& grid) {
-        n = grid.size();
-        m = grid[0].size();
+        int n = grid.size();
+        int m = grid[0].size();
         priority_queue<pair<int, pair<int, int>>,
                        vector<pair<int, pair<int, int>>>,
                        greater<pair<int, pair<int, int>>>> pq;
