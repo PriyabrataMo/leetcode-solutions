@@ -1,0 +1,53 @@
+class Solution {
+public:
+    int n , m;
+    bool isval(int r , int c){
+        return r>=0&&c>=0&&r<n&&c<m;
+    }
+    int minCost(vector<vector<int>>& grid) {
+        n = grid.size();
+        m = grid[0].size();
+        priority_queue<pair<int, pair<int, int>>,
+                       vector<pair<int, pair<int, int>>>,
+                       greater<pair<int, pair<int, int>>>> pq;
+        pq.push({0 , {0,0}});
+        vector<vector<int>> vis(n ,vector<int>(m,INT_MAX));
+        vis[0][0]=0;
+        int arr[4] = {0,0,1,-1};
+        int brr[4] = {1,-1,0,0};
+        while(!pq.empty()){
+            auto it = pq.top();
+            pq.pop();
+            int r = it.second.first;
+            int c = it.second.second;
+            
+            int val = it.first;
+            // cout<<r<<" "<<c<<" "<<val<<endl;
+            //cout<<grid[r][c];
+            if(r==n-1&&c==m-1) return val;
+            for(int i=0;i<=3;i++){
+
+                int nr = r+arr[i];
+                int nc = c+brr[i];
+                
+                if(isval(nr,nc)&&vis[nr][nc]){
+                    //cout<<nr<<" "<<nc<<" "<<val<<endl;
+                    if(grid[r][c]==i+1&&vis[nr][nc]>val){
+                        
+                        pq.push({val , {nr,nc}});
+                        vis[nr][nc]=val;
+                        
+                    }
+                    else if(vis[nr][nc]>val+1){
+                        pq.push({val+1 , {nr,nc}});
+                        vis[nr][nc]=val+1;
+                    }
+                }
+                
+            }
+
+
+        }
+        return -1;
+    }
+};
