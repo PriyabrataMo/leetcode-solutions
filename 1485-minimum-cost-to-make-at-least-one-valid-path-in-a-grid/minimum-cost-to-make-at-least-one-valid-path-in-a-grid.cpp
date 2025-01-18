@@ -1,9 +1,7 @@
 class Solution {
 public:
     int n , m;
-    bool isval(int r , int c){
-        return r>=0&&c>=0&&r<n&&c<m;
-    }
+    
     int minCost(vector<vector<int>>& grid) {
         n = grid.size();
         m = grid[0].size();
@@ -30,7 +28,7 @@ public:
                 int nr = r+arr[i];
                 int nc = c+brr[i];
                 
-                if(isval(nr,nc)&&vis[nr][nc]){
+                if(nr>=0&&nc>=0&&nr<n&&nc<m){
                     //cout<<nr<<" "<<nc<<" "<<val<<endl;
                     if(grid[r][c]==i+1&&vis[nr][nc]>val){
                         
