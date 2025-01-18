@@ -27,19 +27,17 @@ public:
 
                 int nr = r+arr[i];
                 int nc = c+brr[i];
-                
+                int add = 1;
+                if(grid[r][c]==i+1)add=0;
                 if(nr>=0&&nc>=0&&nr<n&&nc<m){
                     //cout<<nr<<" "<<nc<<" "<<val<<endl;
-                    if(grid[r][c]==i+1&&vis[nr][nc]>val){
+                    if(vis[nr][nc]>val+add){
                         
-                        pq.push({val , {nr,nc}});
-                        vis[nr][nc]=val;
+                        pq.push({val+add , {nr,nc}});
+                        vis[nr][nc]=val+add;
                         
                     }
-                    else if(vis[nr][nc]>val+1){
-                        pq.push({val+1 , {nr,nc}});
-                        vis[nr][nc]=val+1;
-                    }
+                    
                 }
                 
             }
