@@ -10,8 +10,9 @@ public:
                 pos[mat[i][j]][1] = j;
             }
         }
+        int sz = arr.size();
         vector<int> ro(n,0) , co(m,0);
-        for(int i=0;i<arr.size();i++){
+        for(int i=0;i<sz;i++){
             int r = pos[arr[i]][0];
             int c = pos[arr[i]][1];
             ro[r]++;
