@@ -15,9 +15,8 @@ public:
         for(int i=0;i<sz;i++){
             int r = pos[arr[i]][0];
             int c = pos[arr[i]][1];
-            ro[r]++;
-            co[c]++;
-            if(ro[r]>=m||co[c]>=n) return i;
+            
+            if(++ro[r]>=m||++co[c]>=n) return i;
         }
         return -1;
     }
