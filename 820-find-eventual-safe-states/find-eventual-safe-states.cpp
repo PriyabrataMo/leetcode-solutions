@@ -10,7 +10,7 @@ public:
                 q.push(i);
             }
             
-            for(auto it:graph[i]){
+            for(auto &it:graph[i]){
                 adj[it].push_back(i);
                 indeg[i]++;
             }
@@ -21,7 +21,7 @@ public:
             int node = q.front();
             q.pop();
             ans.push_back(node);
-            for(auto it:adj[node]){
+            for(auto &it:adj[node]){
                 indeg[it]--;
                 if(indeg[it]==0)q.push(it);
             }
