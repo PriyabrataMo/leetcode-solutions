@@ -31,12 +31,7 @@ public:
         for(int i=0;i<n;i++){
             if(vis[i]==-1&&bfs(i , vis , graph)) return false;
         }
-        for(auto it:vis){
-            cout<<it<<endl;
-        }
-        // for(int i=0;i<n;i++){
-        //     if(a.find(i)!=a.end()&&b.find(i)!=b.end())return false;
-        // }
+       
         return true;
     }
 };
