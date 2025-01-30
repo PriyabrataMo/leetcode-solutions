@@ -6,7 +6,7 @@ bool bfs(int src, vector<int>& vis, vector<vector<int>>& graph) {
     while (!q.empty()) {
         int node = q.front();
         q.pop();
-        for (auto it : graph[node]) {
+        for (auto &it : graph[node]) {
             if (vis[it] != -1) {
                 if (vis[it] == vis[node])
                     return true;
@@ -37,7 +37,7 @@ vector<int> bfs2(int src, vector<int>& vis, vector<vector<int>>& graph) {
     while (!q.empty()) {
         int node = q.front();
         q.pop();
-        for (auto it : graph[node]) {
+        for (auto &it : graph[node]) {
             if (vis[it] == 0) {
                 ans.push_back(it);
                 q.push(it);
@@ -59,7 +59,7 @@ int bfs3(int src, vector<vector<int>>& graph) {
         int dep = no.second;
         ans = max(ans, dep);
         q.pop();
-        for (auto it : graph[node]) {
+        for (auto &it : graph[node]) {
             if (vis[it] == 0) {
 
                 q.push({it, dep + 1});
