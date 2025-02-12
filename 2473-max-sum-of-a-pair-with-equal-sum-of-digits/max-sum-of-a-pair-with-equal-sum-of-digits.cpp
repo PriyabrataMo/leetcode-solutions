@@ -9,19 +9,19 @@ public:
         return res;
     }
     int maximumSum(vector<int>& nums) {
-        unordered_map<int,vector<int>> mpp;
+        vector<int> sums(85,-1);
+        int ans = -1;
         for(auto it:nums){
             int s = sum(it);
-            mpp[s].push_back(it);
+            if(sums[s]!=-1){
+                ans = max(ans , sums[s]+it);
+                sums[s] = max(sums[s] , it);
+            }
+            else{
+                sums[s] = it;
+            }
         }
-        int ans=-1;
-        for(auto it:mpp){
-            auto arr = it.second;
-            if(arr.size()<2) continue;
-            sort(arr.begin() , arr.end());
-            reverse(arr.begin() , arr.end());
-            ans = max(ans , arr[0]+arr[1]);
-        }
+        
         return ans;
     }
 };
