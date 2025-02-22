@@ -12,7 +12,7 @@
 class Solution {
 public:
     TreeNode* recoverFromPreorder(string s) {
-        map<int,vector<TreeNode*>> mpp;
+        unordered_map<int,vector<TreeNode*>> mpp;
         int dep=0;
         int n = s.length();
         int num=0;
