@@ -47,15 +47,15 @@ public:
                 dep=1;
             }
         }
-        for(auto it:mpp){
-            cout<<it.first<<endl;
-            for(auto itt:it.second){
+        // for(auto it:mpp){
+        //     cout<<it.first<<endl;
+        //     for(auto itt:it.second){
 
-                cout<<itt->val<<" ";
-            }
-            cout<<endl;
-            // cout<<"dhjfs"<<endl;
-        }
+        //         cout<<itt->val<<" ";
+        //     }
+        //     cout<<endl;
+        //     // cout<<"dhjfs"<<endl;
+        // }
         return root;
     }
 };
